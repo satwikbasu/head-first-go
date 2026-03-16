@@ -1,6 +1,3 @@
-/*
-This code is actually present in /usr/share/go/src/greeting 
-*/
 package greeting
 
 import "fmt"
