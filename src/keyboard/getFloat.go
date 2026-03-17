@@ -1,3 +1,4 @@
+// Package keyboard reads user input from the keyboard
 package keyboard
 
 import (
@@ -7,7 +8,8 @@ import (
 	"strings"
 )
 
-// capitalized function name means it is exported and can be used in other packages
+// GetFloat reads a floating-point number from the keyboard
+// It returns the number read and any error encountered
 func GetFloat() (float64, error) {
 	reader := bufio.NewReader(os.Stdin)
 	input, err:= reader.ReadString('\n')
