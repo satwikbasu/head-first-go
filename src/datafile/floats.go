@@ -6,20 +6,19 @@ import (
 	"strconv"
 )
 
-func GetFloats(filename string) ([3]float64, error) {
-	var values [3]float64
+func GetFloats(filename string) ([]float64, error) {
+	var values []float64
 	file, err := os.Open(filename)
 	if err != nil {
 		return values, err
 	}
-	i := 0
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
-		values[i], err = strconv.ParseFloat(scanner.Text(), 64)
+		extractedValue, err := strconv.ParseFloat(scanner.Text(), 64)
 		if err != nil {
 			return values, err
 		}
-		i++
+		values = append(values, extractedValue)
 	}
 	err = file.Close()
 	if err != nil {
