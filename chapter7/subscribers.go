@@ -11,11 +11,25 @@ type subscriber struct {
 	active bool
 }
 
+func printInfo(s subscriber) {
+	fmt.Println("Name:", s.name)
+	fmt.Println("Monthly rate:", s.rate)
+	fmt.Println("Active?:", s.active)
+}
+
+func defaultSubscriber (name string) subscriber {
+	var s subscriber
+	s.name = name
+	s.rate = 5.99
+	s.active = true
+	return s
+}
+
 func main() {
-	var subscriber1 subscriber
-	subscriber1.name = "Satwik Basu"
-	fmt.Println("Name:", subscriber1.name)
-	var subscriber2 subscriber
-	subscriber2.name = "John Doe"
-	fmt.Println("Name:", subscriber2.name)
+	subscriber1 := defaultSubscriber("John Doe")
+	subscriber1.rate = 4.99
+	printInfo(subscriber1)
+
+	subscriber2 := defaultSubscriber("Maria Po")
+	printInfo(subscriber2)
 }
