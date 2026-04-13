@@ -1,9 +1,9 @@
 package magazine
 
-type Subscriber struct {
-	Name string
-	Rate float64
-	Active bool
+type Subscriber struct { // Subscriber is capitalized so it can be exported
+	Name string // even field names need to be capitalized
+	Rate float64 // so that they can be exported
+	Active bool // and used in other programs like chapter7/subscribers.go
 }
 
 type Employee struct {
