@@ -24,5 +24,7 @@ func main() {
 	fmt.Printf("%#v\n %T\n", employee, employee) // type is Employee and underlying type is a struct (with a nested struct)
 
 	// two consecutive dot operators are used to access fields of a struct within a struct
-	fmt.Printf("Postal Code of %v = %v\n", employee.Name, employee.Address.PostalCode)
+	// embedded struct fields can be accessed using the outer struct
+	// employee.Address.PostalCode becomes employee.PostalCode in case of anonymous structs
+	fmt.Printf("Postal Code of %v = %v\n", employee.Name, employee.PostalCode)
 }
