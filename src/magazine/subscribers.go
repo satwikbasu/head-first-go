@@ -13,5 +13,8 @@ type Employee struct {
 }
 
 type Address struct {
-	// empty struct which can contain whatever fields required
+	Street string
+	City string
+	State string
+	PostalCode string
 }
