@@ -18,4 +18,7 @@ func main() {
 	employee.Salary = 690000
 	employee.HomeAddress = address // employee also stores a struct as a field i.e. HomeAddress field of type Addres
 	fmt.Printf("%#v\n %T\n", employee, employee) // type is Employee and underlying type is a struct (with a nested struct)
+
+	// two consecutive dot operators are used to access fields of a struct within a struct
+	fmt.Printf("Postal Code of %v = %v\n", employee.Name, employee.HomeAddress.PostalCode)
 }
