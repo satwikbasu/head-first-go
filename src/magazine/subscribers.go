@@ -13,6 +13,7 @@ type Employee struct {
 	Address //anonymous struct with ommitted fields so it becomes easier to access
 }
 
+// needs to exist even if used as anonymous struct 
 type Address struct {
     Street string
     City string
