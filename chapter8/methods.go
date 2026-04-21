@@ -16,13 +16,13 @@ func (m MyType) sayHi() { // sayHi only accepts values of type MyType to call th
 	fmt.Println("Hi from", m) // usually first letter of type in lowercase is used as receiving parameter i.e. m for MyType
 }
 
-func (m MyType) MethodWithParameters(number int, flag bool) {
+func (m MyType) methodWithParameters(number int, flag bool) { // unexported method
 	fmt.Println(m)
 	fmt.Println(number)
 	fmt.Println(flag)
 }
 
-func (m MyType) WithReturn() int {
+func (m MyType) WithReturn() int { // exported method
 	return len(m)
 }
 
@@ -32,6 +32,6 @@ func main() {
 	anotherValue := MyType("Satwik")
 	anotherValue.sayHi()
 
-	value.MethodWithParameters(69, false)
+	value.methodWithParameters(69, false)
 	fmt.Println(anotherValue.WithReturn())
 }
