@@ -22,6 +22,6 @@ func main() {
 	pointer.method() // pointer is passed to method that accepts values - still works
 	pointer.pointerMethod() // pointer is passed to method that accepts pointers - should work, does work
 
-	// What won't work: 
-	// &MyType("example").pointerMethod
+	// What won't work: pointer without assigning its value to a variable
+	// &MyType("example") OR &MyType("example").pointerMethod
 }
