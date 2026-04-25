@@ -6,6 +6,9 @@ type Liters float64
 type Milliliters float64
 type Gallons float64
 
+// the below two functions demonstrate that two functions with the same name
+// can be differentiated by distinct receiving parameters even if return type is same
+
 func (l Liters) ToGallons() Gallons { // converts from Liters to Gallons
 	return Gallons(l * 0.264)
 }
@@ -13,6 +16,9 @@ func (l Liters) ToGallons() Gallons { // converts from Liters to Gallons
 func (m Milliliters) ToGallons() Gallons { // converts from Milliliters to Gallons
 	return Gallons(m * 0.000264)
 }
+
+// the below two functions demonstrate that two functions with the same name
+// can also be differentiated by distinct return types even if receiving parameters are same
 
 func (g Gallons) ToLiters() Liters { // converts from Gallons to Liters
 	return Liters(g * 3.785)
