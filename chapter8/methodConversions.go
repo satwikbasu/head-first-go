@@ -14,6 +14,14 @@ func (m Milliliters) ToGallons() Gallons { // converts from Milliliters to Gallo
 	return Gallons(m * 0.000264)
 }
 
+func (g Gallons) ToLiters() Liters { // converts from Gallons to Liters
+	return Liters(g * 3.785)
+}
+
+func (g Gallons) ToMilliliters() Milliliters { // converts from Gallons to Liters
+	return Milliliters(g * 3785.41)
+}
+
 // even though the methods share the same name, since they have different receiving parameters,
 // the values on which methods are called determine which method to call
 
@@ -22,4 +30,8 @@ func main() {
 	fmt.Printf("%.3f liters equals %.3f gallons\n", soda, soda.ToGallons()) 
 	water := Milliliters(500)
 	fmt.Printf("%.3f milliliters equals %.3f gallons\n", water, water.ToGallons())
+	milk := Gallons(2)
+	fmt.Printf("%.3f gallons equals %.3f liters\n", milk, milk.ToLiters())
+	fmt.Printf("%.3f gallons equals %.3f milliliters\n", milk, milk.ToMilliliters())
+
 }
