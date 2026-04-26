@@ -8,7 +8,12 @@ type Date struct {
 	Day int
 }
 
+func (d *Date) SetYear (year int) {
+	d.Year = year
+}
+
 func main() {
-	date := Date{Day: 27, Month: 4, Year: 2026}
+	date := Date{}
+	date.SetYear(2026)
 	fmt.Println(date)
 }
