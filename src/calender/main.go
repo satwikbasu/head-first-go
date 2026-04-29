@@ -9,6 +9,19 @@ type Date struct {
 	day int
 }
 
+// getter methods
+func (d *Date) Year() int {
+	return d.year
+}
+
+func (d *Date) Month() int {
+	return d.month
+}
+
+func (d *Date) Day() int {
+	return d.day
+}
+
 // however, setter methods remain capitalized so they can be used to set the struct fields
 // -> private fields but public setters
 func (d *Date) SetYear (year int) error {

@@ -24,4 +24,8 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Println(date)
+	fmt.Println(date.Year())
+	fmt.Println(date.Month())
+	fmt.Println(date.Day())
+
 }
