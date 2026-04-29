@@ -2,13 +2,15 @@ package calender
 
 import "errors"
 	
-
+// struct fields not capitalized so they remain unexported
 type Date struct {
 	year int
 	month int
 	day int
 }
 
+// however, setter methods remain capitalized so they can be used to set the struct fields
+// -> private fields but public setters
 func (d *Date) SetYear (year int) error {
 	if year < 1 {
 		return errors.New("invalid year")
