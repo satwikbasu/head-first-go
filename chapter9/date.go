@@ -27,5 +27,5 @@ func main() {
 	fmt.Println(date.Year())
 	fmt.Println(date.Month())
 	fmt.Println(date.Day())
-
+	// fmt.Println(date.Year) will not work since Year struct field is unexported
 }
