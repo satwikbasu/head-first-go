@@ -1,3 +1,8 @@
+/*
+This program and chapter9/embeddedTypes.go demonstrate how embeddedTypes
+can call methods of the underlying outer type as long as they are exported
+*/
+
 package calender 
 
 import "fmt"
