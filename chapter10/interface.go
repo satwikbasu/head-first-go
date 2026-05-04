@@ -1,3 +1,7 @@
+/*
+This program and package interpkg demonstrate how interfaces are used.
+Interfaces define what methods should a type satisfy.
+*/
 package main
 
 import (
@@ -6,6 +10,7 @@ import (
 )
 
 func main() {
+	// value is of type MyInterface, which has an underlying type interface
 	var value interpkg.MyInterface
 	value = interpkg.MyType(5)
 	value.MethodWithoutParameters()
@@ -13,6 +18,6 @@ func main() {
 	fmt.Println(value.MethodWithReturnValue())
 
 	// value.MethodNotInInterface() will not work since value is defined as type MyInterface
-	var example interpkg.MyType // value of type MyType can be used to call methods not in interface
+	var example interpkg.MyType // value of type MyType can be used to call methods not defined under interface
 	example.MethodNotInInterface()
 }
