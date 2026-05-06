@@ -20,4 +20,6 @@ func main() {
 	// value.MethodNotInInterface() will not work since value is defined as type MyInterface
 	var example interpkg.MyType // value of type MyType can be used to call methods not defined under interface
 	example.MethodNotInInterface()
+	// REMINDER: Go interfaces require METHODS on types, not standalone functions.
+	// Commented out: fmt.Println(interpkg.NotAMethod())
 }

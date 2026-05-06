@@ -12,6 +12,7 @@ type MyInterface interface {
 	MethodWithoutParameters()
 	MethodWithParameter(float64)
 	MethodWithReturnValue() string
+	NotAMethod() int
 }
 
 type MyType int // type "MyType" to create methods (without types, methods are functions)
@@ -31,3 +32,10 @@ func (m MyType) MethodWithReturnValue() string {
 func (m MyType) MethodNotInInterface() {
 	fmt.Println("MethodNotInInterface called") // concrete method not required to satisfy MyInterface
 }
+
+// REMINDER: Go interfaces can ONLY be satisfied by METHODS (functions with receivers on a type)
+// NOT by standalone functions. If an interface requires NotAMethod(), the type must implement
+// it as a method: func (m MyType) NotAMethod() int { ... }
+// func NotAMethod() int {
+// 	return 69
+// }
