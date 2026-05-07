@@ -12,7 +12,7 @@ type MyInterface interface {
 	MethodWithoutParameters()
 	MethodWithParameter(float64)
 	MethodWithReturnValue() string
-	NotAMethod() int
+	// NotAMethod() int - cannot have standalone functions, interface accepts only methods
 }
 
 type MyType int // type "MyType" to create methods (without types, methods are functions)
