@@ -60,6 +60,11 @@ type SplashMaker interface {
 	MakeSplash()
 }
 
+// example function to prove interface types can be declared in function parameters as well
+func play(n NoiseMaker){
+	n.MakeSound()
+}
+
 func main() {
 	var toy NoiseMaker
 	// toy is a variable of interface type NoiseMaker. It can only hold values of types that satisfy NoiseMaker.
@@ -71,6 +76,7 @@ func main() {
 	fmt.Printf("Value of toy = %v\n", toy)
 	fmt.Printf("Type of toy = %T\n", toy)
 	toy.MakeSound()
+	play(toy) // same as toy.MakeSound()
 	
 	var liquid SplashMaker
 	liquid = Water("H20")
