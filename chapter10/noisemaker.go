@@ -32,10 +32,14 @@ type NoiseMaker interface {
 
 func play(n NoiseMaker) {
 	n.MakeSound() // OK, part of NoiseMaker interface
-	n.Walk()  // NOT OK, not part of NoiseMaker interface
+	// n.Walk()  // NOT OK, not part of NoiseMaker interface
 }
 
 func main() {
-	play(Robot("Bot")) // will throw an error until n.Walk() is commented in play()
+	// play(Robot("Bot")) will throw an error until n.Walk() is commented in play()
+	var noisemaker NoiseMaker = Robot("Wall-E")
+	noisemaker.MakeSound() // will work without type assertion
+	var robot Robot = noisemaker.(Robot) // type assertion for Walk() method
+	robot.Walk() // requires type assertion since Walk() is not in NoiseMaker
 }
 
