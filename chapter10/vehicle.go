@@ -40,6 +40,18 @@ type Vehicle interface {
 	Steer(string)
 }
 
+// added later on to test type assertion
+func TryVehicle(vehicle Vehicle) {
+	vehicle.Accelerate()
+	vehicle.Steer("left")
+	vehicle.Steer("right")
+	vehicle.Brake()
+	truck, ok := vehicle.(Truck)
+	if ok {
+		truck.LoadCargo("test cargo")
+	}
+}
+
 func main() {
 	var vehicle Vehicle = Car("Mahindra 3XO")
 	vehicle.Accelerate()
@@ -48,4 +60,7 @@ func main() {
 	vehicle = Truck("Ford F150")
 	vehicle.Brake()
 	vehicle.Steer("right")
+
+	// type assertion practice
+	TryVehicle(Truck("Lorry"))
 }
